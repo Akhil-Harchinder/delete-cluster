@@ -1,0 +1,44 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: factset-controlplane-issue
+  project: cs-team
+spec:
+  blueprint:
+    name: trident-test
+    version: v2
+  config:
+    autoApproveNodes: true
+    highAvailability: true
+    installerTtl: 365
+    kubernetesVersion: v1.30.4
+    network:
+      cni:
+        name: Calico
+        version: 3.28.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: instance-20241025-1316-factset-1
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.177
+      roles:
+      - ControlPlane
+      - Worker
+    - arch: amd64
+      hostname: instance-20241025-1340-factset-3
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.236
+      roles:
+      - Worker
+      - ControlPlane
+    - arch: amd64
+      hostname: instance-20241025-1318-factset-2
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.125
+      roles:
+      - ControlPlane
+      - Worker
+  proxy: {}
+  type: mks

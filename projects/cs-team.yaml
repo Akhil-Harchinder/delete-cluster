@@ -1,0 +1,9 @@
+apiVersion: system.k8smgmt.io/v3
+kind: Project
+metadata:
+  name: cs-team
+spec:
+  clusterResourceQuota: {}
+  defaultClusterNamespaceQuota: {}
+  driftWebhook:
+    enabled: true
