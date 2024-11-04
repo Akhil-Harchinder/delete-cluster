@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    test: ""
   name: mm-test-cluster
   project: cs-team
 spec:
