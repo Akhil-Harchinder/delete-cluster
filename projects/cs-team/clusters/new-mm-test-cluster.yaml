@@ -1,7 +1,9 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: mm-test-cluster
+  labels:
+    test: ""
+  name: new-mm-test-cluster
   project: cs-team
 spec:
   blueprintConfig:
@@ -28,7 +30,7 @@ spec:
       - t3.large
       maxSize: 2
       minSize: 2
-      name: ng-123
+      name: ng-1234
       tags:
         email: akhil@rafay.co
         env: cs-team
@@ -36,7 +38,7 @@ spec:
       volumeSize: 80
       volumeType: gp3
     metadata:
-      name: mm-test-cluster
+      name: new-mm-test-cluster
       region: us-west-2
       tags:
         email: akhil@rafay.co
@@ -52,5 +54,4 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
-  proxyConfig: {}
   type: aws-eks
