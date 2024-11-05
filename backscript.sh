@@ -6,7 +6,7 @@ tar -xf rctl-linux-amd64.tar.bz2
 chmod 0755 rctl
 
 # Trigger path in pipeline
-path=""
+path="delete-cluster"
 
 echo "Stage is: $STAGE"
 
