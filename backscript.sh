@@ -6,7 +6,7 @@ tar -xf rctl-linux-amd64.tar.bz2
 chmod 0755 rctl
 
 # Trigger path in pipeline
-path="delete-cluster/terraform"
+path="delete-cluster/projects"
 
 echo "Stage is: $STAGE"
 
