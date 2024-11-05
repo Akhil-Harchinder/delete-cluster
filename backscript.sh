@@ -6,7 +6,7 @@ tar -xf rctl-linux-amd64.tar.bz2
 chmod 0755 rctl
 
 # Trigger path in pipeline
-path="cluster-spec-file/aws/projects"
+path=""
 
 echo "Stage is: $STAGE"
 
